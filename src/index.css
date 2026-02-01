@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+/* Hide bottom navbar on small screens, show hamburger only */
+.md\:hidden { display: none !important; }
+
+@media (max-width: 1024px) {
+  .md\:hidden { display: block !important; }
+  .md\:flex { display: none !important; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease;
+}
+/* iPhone SE, Galaxy S8, small phones */
+@media screen and (max-width: 400px) {
+  .hero-h1, .abt-text {
+    font-size: 1.2rem !important;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .skill-info, .contact-h2 {
+    font-size: 1rem !important;
+  }
+  nav, .navbar {
+    font-size: 0.9rem !important;
+    flex-wrap: wrap;
+    padding: 0 2px;
+  }
+  .lottie, .about-lottie, .dotlottie-player, .DotLottieReact {
+    max-width: 220px !important;
+    max-height: 220px !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+}
+
+/* iPhone 12 Pro, most modern phones */
+@media screen and (min-width: 401px) and (max-width: 430px) {
+  .hero-h1, .abt-text {
+    font-size: 1.4rem !important;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .skill-info, .contact-h2 {
+    font-size: 1.1rem !important;
+  }
+  nav, .navbar {
+    font-size: 1rem !important;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  .lottie, .about-lottie, .dotlottie-player, .DotLottieReact {
+    max-width: 260px !important;
+    max-height: 260px !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+}
+
+/* iPad Mini, iPad Air, iPad Pro, tablets */
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .hero-h1, .abt-text {
+    font-size: 2rem !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 16px !important;
+  }
+  .skill-info, .contact-h2 {
+    font-size: 1.2rem !important;
+    text-align: center !important;
+  }
+  nav, .navbar {
+    font-size: 1.1rem !important;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    padding: 0 8px;
+  }
+  .lottie, .about-lottie, .dotlottie-player, .DotLottieReact {
+    max-width: 320px !important;
+    max-height: 320px !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+  section, .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #171C29;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width:580px) {
+  .hero-h1,.abt-text{
+    text-align: left;
+    margin-left: 20px;
+  }
+  .skill-info{
+    text-align: left;
+  }
+  .contact-h2{
+    text-align: center;
+  }
+}
+
+/* Tablet and small iPad screens */
+@media screen and (min-width: 581px) and (max-width: 1024px) {
+  .hero-h1, .abt-text {
+    text-align: center;
+    margin-left: 0;
+    font-size: 2.2rem;
+    padding: 0 24px;
+  }
+  .skill-info {
+    text-align: center;
+    padding: 0 24px;
+  }
+  .contact-h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  section, .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media screen and (min-width:580px) {
+  .skill-info{
+    text-align: left;
+  }
+}
