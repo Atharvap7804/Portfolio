@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <section id="home" className="h-screen mt-10">
+      <section id="home" className="h-screen">
         <Hero/>
       </section>
 
