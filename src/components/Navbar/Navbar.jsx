@@ -32,8 +32,8 @@ const Navbar = () => {
       <motion.div
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: showDesktopNav ? 0 : -100, opacity: showDesktopNav ? 1 : 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="hidden md:flex fixed top-0 left-0 w-full justify-between items-center px-15 py-5 h-[15vh] bg-[#171C29] z-50 shadow-lg"
+        transition={{ duration: 0.1, ease: "easeOut" }}
+        className="hidden md:flex fixed top-0 left-0 w-full justify-between items-center px-15 py-5 h-[8vh] bg-[#171C29] z-50 shadow-lg"
         style={{ pointerEvents: showDesktopNav ? 'auto' : 'none' }}
       >
         <div className="logo text-2xl text-gray-300">
