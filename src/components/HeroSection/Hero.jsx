@@ -8,7 +8,7 @@ const Hero = () => {
       lg:pt-[15vh]
       flex flex-col-reverse
       gap-12
-
+      
       lg:flex-row
       lg:justify-between
       lg:items-center
