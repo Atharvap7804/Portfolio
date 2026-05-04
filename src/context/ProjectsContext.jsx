@@ -4,10 +4,11 @@ export const ProjectsContext = createContext();
 const projectsData = [
   {
     title: "ExpenseSensei 💸",
-    condition: "In Progress",
+    condition: "Completed",
     description:
       "AI-powered expense tracker for managing personal finances. Features income/expense tracking, smart categorization, budget monitoring, and analytics dashboard. Built using React Native with a scalable backend.",
-    githubLink: "unavailable yet"
+    githubLink: "https://github.com/Atharvap7804/ExpenseSensei.git",
+    liveLink: "https://expense-sensei.vercel.app/"
   },
 
   {

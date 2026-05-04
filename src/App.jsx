@@ -17,7 +17,7 @@ const App = () => {
         <Hero/>
       </section>
 
-      <section id="about" className="min-h-screen">
+      <section id="about" className="min-h-screen ">
         <About/>
       </section>
 

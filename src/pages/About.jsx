@@ -8,7 +8,7 @@ const About = () => {
       className="min-h-screen flex flex-col md:flex-row items-center px-6 md:px-16 py-16 gap-10 text-white"
     >
       {/* Left — LOTTIE */}
-      <div className="md:w-1/2 w-full flex justify-center items-center mt-20 md:mt-0">
+      <div className="md:w-1/2 w-full flex justify-center items-center mt-20 md:mt-20">
         <DotLottieReact
           src="https://lottie.host/ac20c1f4-4240-49cf-a808-cc095fb7a0c3/Ft16466IdA.lottie"
           loop

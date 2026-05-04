@@ -44,7 +44,7 @@ const ProjectCard = () => {
             {project.description}
           </p>
 
-          <div className="flex justify-center mt-5">
+          <div className="flex justify-center mt-5 gap-3">
             <a
               href={project.githubLink}
               target="_blank"
@@ -52,6 +52,15 @@ const ProjectCard = () => {
             >
               View on GitHub
             </a>
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                className="bg-violet-700 px-4 py-2 rounded-md hover:bg-white hover:text-black transition"
+              >
+                Live Demo
+              </a>
+            )}
           </div>
         </motion.div>
       ))}
