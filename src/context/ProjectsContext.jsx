@@ -12,19 +12,20 @@ const projectsData = [
   },
 
   {
+    title: "Devportfolio and Code auditor",
+    condition: "Completed",
+    description:
+      " Full-stack code analysis tool using MERN stack and Gemini API to scan codebases for security vulnerabilities. JWT auth and MongoDB aggregation for analysis history, reducing repeated LLM API calls. ",
+    githubLink: "https://github.com/Atharvap7804/DevPortfolio-and-CodeAuditor",
+    liveLink: "https://dev-portfolio-and-code-auditor.vercel.app/"
+  },
+
+  {
     title: "TaskMaster 📝",
     condition: "Completed",
     description:
       "Task management web application with authentication, role-based dashboards, and real-time task tracking. Enables admins to assign tasks and employees to manage progress efficiently.",
     githubLink: "https://github.com/Atharvap7804/TaskMaster"
-  },
-
-  {
-    title: "Drive 🗂️",
-    condition: "Completed",
-    description:
-      "Cloud-based file storage system with secure authentication and file uploads. Integrated Multer and Cloudinary for storage, JWT authentication, and MongoDB for data persistence.",
-    githubLink: "https://github.com/Atharvap7804/Drive"
   },
 
   {
