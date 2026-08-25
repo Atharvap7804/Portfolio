@@ -21,11 +21,12 @@ const projectsData = [
   },
 
   {
-    title: "TaskMaster 📝",
+    title: "TicketFlow",
     condition: "Completed",
     description:
-      "Task management web application with authentication, role-based dashboards, and real-time task tracking. Enables admins to assign tasks and employees to manage progress efficiently.",
-    githubLink: "https://github.com/Atharvap7804/TaskMaster"
+      "A full-stack support ticketing platform with real-time triage and an AI Copilot for automated issue classification and context-aware email generation.",
+    githubLink: "https://github.com/Atharvap7804/TicketFlow",
+    liveLink: "https://ticket-flow-kappa.vercel.app/"
   },
 
   {
