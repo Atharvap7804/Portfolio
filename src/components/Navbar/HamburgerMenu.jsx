@@ -1,49 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const HamburgerMenu = ({ menuItems }) => {
   const [open, setOpen] = useState(false);
-  const [showIcon, setShowIcon] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < lastScrollY) {
-        setShowIcon(true); // scrolling up
-      } else {
-        setShowIcon(false); // scrolling down
-      }
-      setLastScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
 
   return (
-    <div className="md:hidden fixed top-4 right-4 z-50">
-      {/* Always show hamburger icon, keep it fixed */}
+    <div className="lg:hidden fixed top-5 right-5 z-50">
+      {/* Toggle Button */}
       <button
-        className="p-2 rounded bg-gray-800 text-white focus:outline-none"
         onClick={() => setOpen(!open)}
-        aria-label="Open menu"
+        className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-lg border border-slate-800 text-white shadow-xl focus:outline-none"
+        aria-label="Toggle Navigation Menu"
       >
-        <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          {open ? (
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          )}
         </svg>
       </button>
-      {open && (
-        <div className="absolute right-0 mt-2 w-48 bg-gray-900 rounded shadow-lg flex flex-col py-2 animate-fade-in">
-          {menuItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="px-4 py-2 text-white hover:bg-gray-700 text-lg border-b border-gray-800 last:border-b-0"
-              onClick={() => setOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      )}
+
+      {/* Dropdown Menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute right-0 mt-3 w-56 p-2 rounded-2xl bg-slate-900/95 backdrop-blur-2xl border border-slate-800 shadow-2xl flex flex-col gap-1"
+          >
+            {menuItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="px-4 py-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 font-medium text-sm transition"
+              >
+                {item.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

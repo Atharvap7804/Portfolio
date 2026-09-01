@@ -1,52 +1,48 @@
-import React from 'react'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="min-h-screen flex flex-col md:flex-row items-center px-6 md:px-16 py-16 gap-10 text-white"
-    >
-      {/* Left — LOTTIE */}
-      <div className="md:w-1/2 w-full flex justify-center items-center mt-20 md:mt-20">
+    <div className="flex flex-col md:flex-row items-center gap-12 py-12">
+      {/* Left — Lottie */}
+      <div className="md:w-1/2 w-full flex justify-center items-center">
         <DotLottieReact
           src="https://lottie.host/ac20c1f4-4240-49cf-a808-cc095fb7a0c3/Ft16466IdA.lottie"
           loop
           autoplay
-          className=" md:w-[450px] md:h-[450px]"
+          className="w-full max-w-[420px] drop-shadow-[0_0_35px_rgba(168,85,247,0.15)]"
         />
       </div>
-      {/* Right — TEXT */}
-      <div className="md:w-1/2 w-full flex flex-col gap-6 text-center md:text-left p-10  shadow-lg
-       drop-shadow-gray-950 ">
-        <h2 className="text-6xl md:text-5xl font-bold">
+
+      {/* Right — Glass Card */}
+      <div className="md:w-1/2 w-full rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl p-8 md:p-10 shadow-xl space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">
           About Me
         </h2>
 
-        <p className="text-base md:text-lg sm:text-left text-gray-300">
-          I’m Atharva, a final-year Computer Science student and a passionate
-          Full Stack MERN Developer. I enjoy building real-world web applications
-          that solve practical problems and provide smooth user experiences.
+        <p className="text-slate-300 leading-relaxed">
+          I’m Atharva, a final-year Computer Science student and a passionate Full Stack MERN Developer building practical, production-ready web applications.
         </p>
 
-        <p className="text-base md:text-lg text-gray-300">
-          I’ve worked on multiple full-stack projects involving authentication,
-          dashboards, APIs, and databases. I like writing clean, maintainable
-          code and continuously improving my skills by building and refining
-          projects.
+        <p className="text-slate-300 leading-relaxed">
+          I’ve developed end-to-end applications handling authentication, state management, REST APIs, and database performance, prioritizing readable and scalable architecture.
         </p>
 
-        <ul className="flex flex-col gap-3 text-base md:text-lg">
-          <li>🚀 Strong foundation in JavaScript, React, Node.js, Express</li>
-          <li>🧠 Hands-on experience with MongoDB, Firebase & REST APIs</li>
-          <li>🛠️ Built real-world apps like Task Manager, E-commerce & Social Media</li>
-          <li>🎯 Looking for Internship / Entry-level Full Stack roles</li>
-        </ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          {[
+            '🚀 JavaScript, React, Node.js',
+            '🧠 MongoDB, Firebase & REST',
+            '🛠️ Scalable Full-Stack Apps',
+            '🎯 Open for Internship Roles',
+          ].map((item, idx) => (
+            <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-sm font-medium text-slate-200">
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
+    </div>
+  );
+};
 
-      
-    </section>
-  )
-}
-
-export default About
+export default About;

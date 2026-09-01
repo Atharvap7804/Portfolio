@@ -1,22 +1,22 @@
-import React, { useContext } from 'react'
-import { motion } from "framer-motion"
-import { ProjectsContext } from '../../context/ProjectsContext'
+import React, { useContext } from 'react';
+import { motion } from "framer-motion";
+import { ProjectsContext } from '../../context/ProjectsContext';
 
 const ProjectCard = () => {
-  const { projects } = useContext(ProjectsContext)
+  const { projects } = useContext(ProjectsContext);
 
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 }
+      transition: { staggerChildren: 0.15 }
     }
-  }
+  };
 
   const item = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 25 },
     show: { opacity: 1, y: 0 }
-  }
+  };
 
   return (
     <motion.div
@@ -24,48 +24,55 @@ const ProjectCard = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-[90vw] mt-6"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto px-2"
     >
       {projects.map((project, idx) => (
         <motion.div
           variants={item}
           key={idx}
-          className="p-5 rounded-xl flex flex-col text-white h-full shadow-lg bg-[#0b1120] hover:bg-violet-700 transition duration-300"
+          className="group rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:border-purple-500/40 backdrop-blur-xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 shadow-xl hover:shadow-purple-950/30"
         >
-          <h1 className="text-xl font-semibold mb-1">
-            {project.title}
-          </h1>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                {project.title}
+              </h3>
+              {project.condition && (
+                <span className="text-[11px] font-semibold uppercase px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                  {project.condition}
+                </span>
+              )}
+            </div>
 
-          <p className="text-sm text-gray-400 mb-2">
-            {project.condition}
-          </p>
+            <p className="text-slate-300 text-sm leading-relaxed font-light line-clamp-4">
+              {project.description}
+            </p>
+          </div>
 
-          <p className="text-gray-300 flex-grow">
-            {project.description}
-          </p>
-
-          <div className="flex justify-center mt-5 gap-3">
+          <div className="flex items-center gap-3 pt-6 mt-4 border-t border-slate-800/60">
             <a
               href={project.githubLink}
               target="_blank"
-              className="bg-[#060b16] px-4 py-2 rounded-md hover:bg-white hover:text-black transition"
+              rel="noreferrer"
+              className="flex-1 text-center py-2.5 px-4 rounded-xl bg-slate-800/60 hover:bg-slate-700/60 border border-slate-700/50 text-slate-200 text-xs sm:text-sm font-medium transition"
             >
-              View on GitHub
+              GitHub Code
             </a>
             {project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
-                className="bg-violet-700 px-4 py-2 rounded-md hover:bg-white hover:text-black transition"
+                rel="noreferrer"
+                className="flex-1 text-center py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-medium shadow-md shadow-purple-600/20 transition"
               >
-                Live Demo
+                Live Demo ↗
               </a>
             )}
           </div>
         </motion.div>
       ))}
     </motion.div>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;
